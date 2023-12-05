@@ -107,19 +107,19 @@ extension UIView {
 // MARK: - BlurView
 
 open class BlurView {
-    private var superview: UIView
-    private var blur: UIVisualEffectView?
-    private var editing = false
-    private(set) var blurContentView: UIView?
-    private(set) var vibrancyContentView: UIView?
+    public var superview: UIView
+    public var blur: UIVisualEffectView?
+    public var editing = false
+    public var blurContentView: UIView?
+    public var vibrancyContentView: UIView?
 
-    var animationDuration: TimeInterval = 0.1
+    public var animationDuration: TimeInterval = 0.1
 
     /**
      * Blur style. After it is changed all subviews on
      * blurContentView & vibrancyContentView will be deleted.
      */
-    var style: UIBlurEffect.Style = .light {
+    public var style: UIBlurEffect.Style = .light {
         didSet {
             guard oldValue != style,
                   !editing else { return }
@@ -130,7 +130,7 @@ open class BlurView {
     /**
      * Alpha component of view. It can be changed freely.
      */
-    var alpha: CGFloat = 0 {
+    public var alpha: CGFloat = 0 {
         didSet {
             guard !editing else { return }
             if blur == nil {
@@ -147,7 +147,7 @@ open class BlurView {
         self.superview = view
     }
 
-    func setup(style: UIBlurEffect.Style, alpha: CGFloat) -> Self {
+    public func setup(style: UIBlurEffect.Style, alpha: CGFloat) -> Self {
         self.editing = true
 
         self.style = style
@@ -158,7 +158,7 @@ open class BlurView {
         return self
     }
 
-    func enable(isHidden: Bool = false) {
+    public func enable(isHidden: Bool = false) {
         if blur == nil {
             applyBlurEffect()
         }
@@ -166,7 +166,7 @@ open class BlurView {
         self.blur?.isHidden = isHidden
     }
 
-    private func applyBlurEffect() {
+    public func applyBlurEffect() {
         blur?.removeFromSuperview()
 
         applyBlurEffect(
@@ -175,7 +175,7 @@ open class BlurView {
         )
     }
 
-    private func applyBlurEffect(
+    public func applyBlurEffect(
         style: UIBlurEffect.Style,
         blurAlpha: CGFloat
     ) {
