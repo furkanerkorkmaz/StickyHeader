@@ -55,11 +55,11 @@ extension UIView {
         self.transform = rotation
     }
 
-    private struct AssociatedKeys {
+     struct AssociatedKeys {
         static var descriptiveName: String = "AssociatedKeys.DescriptiveName.blurView"
     }
 
-    private(set) var blurView: BlurView {
+     var blurView: BlurView {
         get {
             if let blurView = objc_getAssociatedObject(
                 self,
