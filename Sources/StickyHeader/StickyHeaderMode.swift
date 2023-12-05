@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum ParallaxHeaderMode: Int {
+public enum StickyHeaderMode: Int {
     /**
      The option to scale the content to fill the size of the header. Some portion of the content may be clipped to fill the header’s bounds.
      */

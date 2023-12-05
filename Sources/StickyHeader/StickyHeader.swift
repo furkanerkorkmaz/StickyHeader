@@ -8,7 +8,7 @@
 
 import ObjectiveC.runtime
 import UIKit
-
+import SnapKit
 public typealias ParallaxHeaderHandlerBlock = (_ parallaxHeader: ParallaxHeader) -> Void
 
 private let parallaxHeaderKVOContext = UnsafeMutableRawPointer.allocate(
@@ -118,8 +118,8 @@ public class ParallaxHeader: NSObject {
     /**
      The parallax header behavior mode. By default is fill mode.
      */
-    private var _mode: ParallaxHeaderMode = .fill
-    public var mode: ParallaxHeaderMode {
+    private var _mode: StickyHeaderMode = .fill
+    public var mode: StickyHeaderMode {
         get {
             _mode
         }
