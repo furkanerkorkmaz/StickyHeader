@@ -16,9 +16,9 @@ private let parallaxHeaderKVOContext = UnsafeMutableRawPointer.allocate(
     alignment: 1
 )
 
-// MARK: - ParallaxView
+// MARK: - StickyHeaderView
 
-class ParallaxView: UIView {
+class StickyHeaderView: UIView {
     fileprivate weak var parent: ParallaxHeader!
 
     override func willMove(toSuperview _: UIView?) {
@@ -89,7 +89,7 @@ public class ParallaxHeader: NSObject {
         if let contentView = _contentView {
             return contentView
         }
-        let contentView = ParallaxView()
+        let contentView = StickyHeaderView()
         contentView.parent = self
         contentView.clipsToBounds = true
 
