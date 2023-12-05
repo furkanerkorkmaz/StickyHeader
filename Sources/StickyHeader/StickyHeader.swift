@@ -7,8 +7,8 @@
 //
 
 import ObjectiveC.runtime
-import UIKit
 import SnapKit
+import UIKit
 public typealias ParallaxHeaderHandlerBlock = (_ parallaxHeader: ParallaxHeader) -> Void
 
 private let parallaxHeaderKVOContext = UnsafeMutableRawPointer.allocate(
@@ -18,10 +18,10 @@ private let parallaxHeaderKVOContext = UnsafeMutableRawPointer.allocate(
 
 // MARK: - StickyHeaderView
 
-public class StickyHeaderView: UIView {
+open class StickyHeaderView: UIView {
     fileprivate weak var parent: ParallaxHeader!
 
-    public override func willMove(toSuperview _: UIView?) {
+    override public func willMove(toSuperview _: UIView?) {
         guard let scrollView = superview as? UIScrollView else {
             return
         }
@@ -34,7 +34,7 @@ public class StickyHeaderView: UIView {
         )
     }
 
-    public override func didMoveToSuperview() {
+    override public func didMoveToSuperview() {
         guard let scrollView = superview as? UIScrollView else {
             return
         }
