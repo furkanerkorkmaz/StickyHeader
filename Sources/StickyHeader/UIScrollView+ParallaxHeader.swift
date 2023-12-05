@@ -106,7 +106,7 @@ extension UIView {
 
 // MARK: - BlurView
 
-class BlurView {
+open class BlurView {
     private var superview: UIView
     private var blur: UIVisualEffectView?
     private var editing = false
