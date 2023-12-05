@@ -60,7 +60,7 @@ extension UIView {
         static var descriptiveName: String = "AssociatedKeys.DescriptiveName.blurView"
     }
 
-    var blurView: BlurView {
+    public var blurView: BlurView {
         get {
             if let blurView = objc_getAssociatedObject(
                 self,
