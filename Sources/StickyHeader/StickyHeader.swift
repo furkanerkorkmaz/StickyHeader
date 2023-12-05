@@ -18,10 +18,10 @@ private let parallaxHeaderKVOContext = UnsafeMutableRawPointer.allocate(
 
 // MARK: - StickyHeaderView
 
-class StickyHeaderView: UIView {
+public class StickyHeaderView: UIView {
     fileprivate weak var parent: ParallaxHeader!
 
-    override func willMove(toSuperview _: UIView?) {
+    public override func willMove(toSuperview _: UIView?) {
         guard let scrollView = superview as? UIScrollView else {
             return
         }
@@ -34,7 +34,7 @@ class StickyHeaderView: UIView {
         )
     }
 
-    override func didMoveToSuperview() {
+    public override func didMoveToSuperview() {
         guard let scrollView = superview as? UIScrollView else {
             return
         }
