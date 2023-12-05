@@ -118,8 +118,8 @@ public class ParallaxHeader: NSObject {
     /**
      The parallax header behavior mode. By default is fill mode.
      */
-    private var _mode: StickyHeaderMode = .fill
-    public var mode: StickyHeaderMode {
+    private var _mode: ParallaxHeaderMode = .fill
+    public var mode: ParallaxHeaderMode {
         get {
             _mode
         }
